@@ -5,15 +5,15 @@ import java.security.NoSuchAlgorithmException;
 
 public class HashGenerator {
 	
-	  public static void main (String[] args)
-	    throws NoSuchAlgorithmException {
+	  public static void main (String[] args) throws NoSuchAlgorithmException {
 	    
-	    String md2 = getHash("test", "md2");
-	    String md5 = getHash("test", "md5");
-	    String sha1 = getHash("test", "sha1");
-	    String sha256 = getHash("test", "sha-256");
-	    String sha384 = getHash("test", "sha-384");
-	    String sha512 = getHash("test", "sha-512");
+		  String code = "testcode";
+	    String md2 = getHash(code, "MD2");
+	    String md5 = getHash(code, "MD5");
+	    String sha1 = getHash(code, "SHA1");
+	    String sha256 = getHash(code, "SHA-256");
+	    String sha384 = getHash(code, "SHA-384");
+	    String sha512 = getHash(code, "SHA-512");
 
 	    // ¡°MD2¡È, ¡°MD5¡È, ¡°SHA1¡È, ¡°SHA-256¡È, ¡°SHA-384¡È, ¡°SHA-512¡È
 	    System.out.println("MD2     : [" + md2 + "](" + md2.length() + ")");
