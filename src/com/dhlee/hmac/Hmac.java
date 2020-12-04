@@ -14,7 +14,10 @@ public class Hmac {
             Mac hasher = Mac.getInstance(ALGORISM);
             SecretKeySpec secretSpec = new SecretKeySpec(key.getBytes("UTF-8"), ALGORISM);
             hasher.init(secretSpec);
-            byte[] hash = hasher.doFinal(message.getBytes());
+            
+            String hashBody = key + message;
+            
+            byte[] hash = hasher.doFinal(hashBody.getBytes("UTF-8"));
             return byteToString(hash);
         }
         catch (NoSuchAlgorithmException e){
